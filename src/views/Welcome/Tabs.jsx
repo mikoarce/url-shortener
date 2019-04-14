@@ -1,13 +1,13 @@
 import React from 'react';
 import { Tab } from 'semantic-ui-react';
 
-const renderUrlShortenerPane = () => <Tab.Pane>UrlShortenerPane</Tab.Pane>;
+const renderUrlShortener = () => <Tab.Pane>UrlShortener</Tab.Pane>;
 
-const renderUrlAnalyticsPane = () => <Tab.Pane>UrlAnalyticsPane</Tab.Pane>;
+const renderUrlAnalytics = () => <Tab.Pane>UrlAnalytics</Tab.Pane>;
 
 const panes = [
-  { menuItem: 'URL Shortener', render: renderUrlShortenerPane },
-  { menuItem: 'Url Analytics', render: renderUrlAnalyticsPane },
+  { menuItem: 'Shortener', render: renderUrlShortener },
+  { menuItem: 'Analytics', render: renderUrlAnalytics },
 ];
 
 const Tabs = () => <Tab panes={panes}/>
