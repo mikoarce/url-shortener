@@ -6,7 +6,7 @@ import {
 } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { ConnectedRouter } from 'connected-react-router';
-import Welcome from 'views/Welcome/Welcome';
+import Welcome from 'views/Welcome';
 import history from 'app/history';
 import store from 'app/store';
 
