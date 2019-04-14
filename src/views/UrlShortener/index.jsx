@@ -1,5 +1,6 @@
 import React from 'react';
 import { Form, Button, Input, Message } from 'semantic-ui-react';
+import StringUtil from 'util/string-util';
 
 const Status = Object.freeze({
   NONE: Symbol('none'),
@@ -14,6 +15,7 @@ class UrlShortener extends React.PureComponent {
     this.state = {
       url: '',
       status: Status.NONE,
+      message: '',
     }
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -21,7 +23,16 @@ class UrlShortener extends React.PureComponent {
   }
 
   handleSubmit() {
-    console.log(this.state.url);
+    const { url } = this.state;
+
+    if (StringUtil.isUrl(url)) {
+      this.setState({ status: Status.SUCCESS });
+    } else {
+      this.setState({
+        status: Status.ERROR,
+        message: `"${url}" is not a valid URL`,
+      });
+    }
   }
 
   handleChange(_, { name, value }) {
@@ -29,7 +40,7 @@ class UrlShortener extends React.PureComponent {
   }
 
   render() {
-    const { url, status } = this.state;
+    const { url, status, message } = this.state;
 
     return (
       <Form
@@ -53,8 +64,8 @@ class UrlShortener extends React.PureComponent {
             disabled={url.length === 0}
           />
         </Form.Group>
-        <Message success header="Success" content="Success!" />
-        <Message error header="Error" content="Error!" />
+        <Message success header="Success" content="Your shortened link is: http://link.com" />
+        <Message error header="Error" content={message} />
       </Form>
     );
   }
