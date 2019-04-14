@@ -1,7 +1,7 @@
 {
-  "name": "portfolio",
+  "name": "urlshorten",
   "version": "0.0.0",
-  "description": "My Porfolio",
+  "description": "Url Shortener",
   "main": "./src/index.jsx",
   "nyc": {
     "reporter": [
