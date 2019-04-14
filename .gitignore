@@ -1,0 +1,10 @@
+node_modules
+dist/assets/images/backdrop*
+
+# Testing
+coverage
+.nyc_output
+
+*.log
+.vs
+.vscode
