@@ -5,6 +5,7 @@ import {
 } from 'semantic-ui-react';
 import { connect } from 'react-redux';
 import { push } from 'connected-react-router';
+import Tabs from './Tabs';
 
 export class Welcome extends React.Component {
   static get propTypes() {
@@ -24,15 +25,15 @@ export class Welcome extends React.Component {
       <Grid verticalAlign="middle" columns={1} centered>
         <Grid.Row>
           <Grid.Column>
-            <Segment textAlign="center">
+            <Segment>
               <Header>
-                This is my main
+                URL Shortener and Analytics
                 <Header.Subheader>
-                  This is my subheader
+                  Shorten your URL and view some analytics.
                 </Header.Subheader>
               </Header>
               <Divider />
-              THIS IS MY CONTENT
+              <Tabs />
             </Segment>
           </Grid.Column>
         </Grid.Row>
