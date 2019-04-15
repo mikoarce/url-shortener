@@ -1,7 +1,17 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { actions as analyticsActions } from 'app/analytics-reducer';
 import AnalyticsPlaceholder from './AnalyticsPlaceholder';
 
 class UrlAnalytics extends React.PureComponent {
+  static get propTypes() {
+    return {
+      url: PropTypes.string.isRequired,
+      info: PropTypes.arrayOf(PropTypes.object).isRequired,
+      fetchUrlInfo: PropTypes.func.isRequired,
+    };
+  }
   constructor(props) {
     super(props);
 
@@ -14,8 +24,8 @@ class UrlAnalytics extends React.PureComponent {
   }
 
   handleGetUrlAnalytics() {
-    const { url } = this.state;
-    console.log(url);
+    const { url: urlInput } = this.state;
+    console.log(urlInput);
   }
 
   handleChange(_, { name, value }) {
@@ -32,4 +42,13 @@ class UrlAnalytics extends React.PureComponent {
   }
 }
 
-export default UrlAnalytics;
+const mapStateToProps = state => ({
+  url: state.analytics.url,
+  info: state.analytics.info,
+});
+
+const mapDispatchToProps = dispatch => ({
+  fetchUrlInfo: url => dispatch(analyticsActions.fetchUrlInfo(url)),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(UrlAnalytics);
