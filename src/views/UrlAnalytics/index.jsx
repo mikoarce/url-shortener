@@ -1,5 +1,5 @@
 import React from 'react';
-import { Segment, Input, Icon, Header } from 'semantic-ui-react';
+import AnalyticsPlaceholder from './AnalyticsPlaceholder';
 
 class UrlAnalytics extends React.PureComponent {
   constructor(props) {
@@ -24,19 +24,10 @@ class UrlAnalytics extends React.PureComponent {
 
   render() {
     return (
-      <Segment placeholder >
-        <Header icon>
-          <Icon name="exclamation" />
-          Enter link below to fetch information.
-        </Header>
-        <Input
-          name="url"
-          size="small"
-          action={{ icon: 'search', onClick: this.handleGetUrlAnalytics }}
-          placeholder="Enter URL"
-          onChange={this.handleChange}
-        />
-      </Segment>
+      <AnalyticsPlaceholder
+        onSubmit={this.handleGetUrlAnalytics}
+        onChange={this.handleChange}
+      />
     );
   }
 }
