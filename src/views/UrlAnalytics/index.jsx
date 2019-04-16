@@ -36,7 +36,7 @@ class UrlAnalytics extends React.PureComponent {
   }
 
   render() {
-    const { url, info } = this.props;
+    const { url, info, clearUrl } = this.props;
 
     return url.length === 0 ? 
       (
@@ -45,7 +45,11 @@ class UrlAnalytics extends React.PureComponent {
           onChange={this.handleChange}
         />
       ) : (
-        <AnalyticsTable headerMessage={`Analytics Table for URL: ${url}`} info={info}/>
+        <AnalyticsTable
+          headerMessage={`Analytics Table for: ${url}`}
+          info={info}
+          onClearUrl={clearUrl}
+        />
       );
   }
 }
@@ -57,6 +61,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   fetchUrlInfo: url => dispatch(analyticsActions.fetchUrlInfo(url)),
+  clearUrl: () => dispatch(analyticsActions.clearUrl()),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(UrlAnalytics);

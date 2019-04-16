@@ -1,21 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Table, Button, Header } from 'semantic-ui-react';
+import { Table, Button, Header, Label } from 'semantic-ui-react';
 
 const headerRow = ['IP', 'Operating System', 'Last Access Date'];
-
-const footerRow = () => (
-  <Table.Row>
-    <Table.HeaderCell colSpan="3">
-      <Button
-        primary
-        floated="right"
-        content="Back"
-        size="small"
-      />
-    </Table.HeaderCell>
-  </Table.Row>
-);
 
 const renderBodyRow = ({ ip, os, date }, i) => ({
   key: `row-${i}`,
@@ -26,17 +13,32 @@ const renderBodyRow = ({ ip, os, date }, i) => ({
   ],
 });
 
-const AnalyticsTable = ({ info, headerMessage }) => (
+const AnalyticsTable = ({ info, headerMessage, onClearUrl }) => (
   <React.Fragment>
     { headerMessage ? <Header className="wrapped-header" content={headerMessage} /> : null }
+    <Label
+      as="a"
+      basic
+      content="Fetch data from a different URL"
+      onClick={onClearUrl}
+    />
     <Table
       celled
       headerRow={headerRow}
-      footerRow={footerRow}
       renderBodyRow={renderBodyRow}
       tableData={info}
     />
   </React.Fragment>
 );
+
+AnalyticsTable.propTypes = {
+  info: PropTypes.arrayOf(PropTypes.object).isRequired,
+  headerMessage: PropTypes.string,
+  onClearUrl: PropTypes.func.isRequired,
+};
+
+AnalyticsTable.defaultProps = {
+  headerMessage: undefined,
+};
 
 export default AnalyticsTable;
