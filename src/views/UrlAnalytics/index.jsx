@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { actions as analyticsActions } from 'app/analytics-reducer';
 import AnalyticsPlaceholder from './AnalyticsPlaceholder';
+import AnalyticsTable from './AnalyticsTable';
 
 class UrlAnalytics extends React.PureComponent {
   static get propTypes() {
@@ -25,7 +26,9 @@ class UrlAnalytics extends React.PureComponent {
 
   handleGetUrlAnalytics() {
     const { url: urlInput } = this.state;
-    console.log(urlInput);
+    const { fetchUrlInfo } = this.props;
+
+    fetchUrlInfo(urlInput);
   }
 
   handleChange(_, { name, value }) {
@@ -33,12 +36,17 @@ class UrlAnalytics extends React.PureComponent {
   }
 
   render() {
-    return (
-      <AnalyticsPlaceholder
-        onSubmit={this.handleGetUrlAnalytics}
-        onChange={this.handleChange}
-      />
-    );
+    const { url, info } = this.props;
+
+    return url.length === 0 ? 
+      (
+        <AnalyticsPlaceholder
+          onSubmit={this.handleGetUrlAnalytics}
+          onChange={this.handleChange}
+        />
+      ) : (
+        <AnalyticsTable info={info}/>
+      );
   }
 }
 

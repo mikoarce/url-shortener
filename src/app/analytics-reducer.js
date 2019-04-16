@@ -14,8 +14,8 @@ const defaultState = {
 const fetchUrlInfo = (state, url) => {
   // TODO: Call actual URL shortener API here.
   const info = [
-    { ip: '111.111.111.1', os: 'macOs', date: '1970-01-01T00:00:00.000Z' },
-    { ip: '222.222.222.2', os: 'Ubuntu', date: '2019-05-10T01:02:03.000Z' },
+    { ip: '111.111.111.1', os: 'macOs 10.14', date: '1970-01-01T00:00:00.000Z' },
+    { ip: '222.222.222.2', os: 'Ubuntu 18.04 LTS', date: '2019-05-10T01:02:03.000Z' },
   ];
   return Object.assign({}, state, { url, info });
 };
