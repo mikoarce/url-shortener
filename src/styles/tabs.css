@@ -1,0 +1,5 @@
+#main-container .active.tab {
+  overflow: auto;
+  max-height: 20rem;
+  min-height: 20rem;
+}

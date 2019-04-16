@@ -1,5 +1,4 @@
 import React from 'react';
-import { PropTypes } from 'prop-types';
 import {
   Header, Segment, Divider, Grid,
 } from 'semantic-ui-react';
@@ -13,7 +12,7 @@ const Welcome = () => (
         <Header>
           URL Shortener and Analytics
           <Header.Subheader>
-            Shorten your URL and view some analytics (analytics are mocked).
+            Shorten your URL and view mocked analytics.
           </Header.Subheader>
         </Header>
         <Divider />

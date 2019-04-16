@@ -18,6 +18,15 @@ body {
   height: inherit;
 }
 
+#main-container > .grid {
+  width: 100%;
+  max-width: 50rem;
+}
+
+.wrapped-header {
+  word-break: break-word;
+}
+
 .centered {
   left: 50%;
   margin-right: -50%;
@@ -26,15 +35,3 @@ body {
   transform: translate(-50%, -50%);
 }
 
-.panel-icon {
-   color: rgba(0,0,0,0.2);
-   cursor: pointer;
-   padding: 0.3rem;
-   position: absolute;
-   z-index: 9999;
-}
-
-.panel-icon:hover {
-  color: rgba(0, 0, 0, 0.4);
-  transition: ease-in 0.25s;
-}

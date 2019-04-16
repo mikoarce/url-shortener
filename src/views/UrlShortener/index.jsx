@@ -55,7 +55,7 @@ class UrlShortener extends React.PureComponent {
             placeholder="Enter link"
             onChange={this.handleChange}
             value={url}
-            width={12}
+            width={14}
           />
           <Form.Button
             primary
