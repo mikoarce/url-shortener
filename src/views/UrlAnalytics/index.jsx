@@ -45,7 +45,7 @@ class UrlAnalytics extends React.PureComponent {
           onChange={this.handleChange}
         />
       ) : (
-        <AnalyticsTable info={info}/>
+        <AnalyticsTable headerMessage={`Analytics Table for URL: ${url}`} info={info}/>
       );
   }
 }
