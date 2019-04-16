@@ -16,41 +16,27 @@ class UrlAnalytics extends React.PureComponent {
   constructor(props) {
     super(props);
 
-    this.state = {
-      url: '',
-    };
-
     this.handleGetUrlAnalytics = this.handleGetUrlAnalytics.bind(this);
-    this.handleChange = this.handleChange.bind(this);
   }
 
-  handleGetUrlAnalytics() {
-    const { url: urlInput } = this.state;
+  handleGetUrlAnalytics(url) {
     const { fetchUrlInfo } = this.props;
 
-    fetchUrlInfo(urlInput);
-  }
-
-  handleChange(_, { name, value }) {
-    this.setState({[name]: value});
+    fetchUrlInfo(url);
   }
 
   render() {
     const { url, info, clearUrl } = this.props;
 
     return url.length === 0 ? 
-      (
-        <AnalyticsPlaceholder
-          onSubmit={this.handleGetUrlAnalytics}
-          onChange={this.handleChange}
-        />
-      ) : (
-        <AnalyticsTable
-          headerMessage={`Analytics Table for: ${url}`}
-          info={info}
-          onClearUrl={clearUrl}
-        />
-      );
+      <AnalyticsPlaceholder onSubmit={this.handleGetUrlAnalytics} />
+        : (
+          <AnalyticsTable
+            headerMessage={`Analytics Table for: ${url}`}
+            info={info}
+            onClearUrl={clearUrl}
+          />
+        );
   }
 }
 
