@@ -1,6 +1,7 @@
---require @babel-polyfill
---require babel-register
+--require @babel/polyfill
+--require @babel/register
 --require jsdom-global/register
 --require chai/register-should
--R spec
+--reporter spec
+--timeout 15000
 --ui bdd

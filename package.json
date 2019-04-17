@@ -13,7 +13,7 @@
   },
   "scripts": {
     "start": "webpack-dev-server",
-    "test": "NODE_PATH=./src:./src/components:$NODE_PATH NODE_ENV=test nyc mocha --recursive -R spec",
+    "test": "NODE_PATH=./test/browser/:./src:$NODE_PATH NODE_ENV=test nyc mocha --recursive",
     "test-debug": "NODE_PATH=./src:./src/components:$NODE_PATH NODE_ENV=test nyc mocha --inspect-brk --recursive -R spec",
     "lint": "eslint --ext .js --ext .jsx .",
     "build": "NODE_ENV=production webpack -p .",
@@ -27,7 +27,7 @@
   "license": "MIT",
   "homepage": "https://github.com/mikoarce/my-page",
   "dependencies": {
-    "@babel/polyfill": "^7.0.0",
+    "@babel/polyfill": "^7.4.3",
     "connected-react-router": "^5.0.1",
     "history": "^4.7.2",
     "lodash": "^4.17.4",
@@ -67,7 +67,7 @@
     "jsdom-global": "^3.0.2",
     "mini-css-extract-plugin": "^0.5.0",
     "mocha": "^5.2.0",
-    "nyc": "^13.1.0",
+    "nyc": "^13.3.0",
     "optimize-css-assets-webpack-plugin": "^5.0.1",
     "puppeteer": "^1.11.0",
     "redux-devtools": "^3.4.1",
