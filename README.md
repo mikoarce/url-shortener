@@ -10,6 +10,7 @@ Tech stack for this project is as follows:
 - [ ] Add the URL shortener functionality (most likely in its reducer).
 - [ ] Add analytics functionality (Google's UI shortener API could do this if I remember correctly).
 - [ ] Create browser level tests especially since Puppeteer is a dev dependency anyway.
+- [ ] Add unit test for util class.
 - [ ] Improve UI.
 
 ## Deployment
