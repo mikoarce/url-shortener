@@ -1,8 +1,8 @@
 import React from 'react';
 import { Tab } from 'semantic-ui-react';
-import UrlShortener from 'views/UrlShortener';
-import UrlAnalytics from 'views/UrlAnalytics';
-import 'styles/tabs.css'
+import UrlShortener from 'components/UrlShortener';
+import UrlAnalytics from 'components/UrlAnalytics';
+import 'styles/tabs.css';
 
 const renderUrlShortener = () => <Tab.Pane className="fixed-size"><UrlShortener /></Tab.Pane>;
 
