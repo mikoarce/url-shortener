@@ -15,8 +15,8 @@ const Layout = () => (
     <ConnectedRouter history={history}>
       <div id="main-container">
         <Switch>
-          <Route path="/welcome" component={Welcome} />
-          <Redirect to="/welcome" />
+          <Route path="/index" component={Welcome} />
+          <Redirect to="/index" />
         </Switch>
       </div>
     </ConnectedRouter>

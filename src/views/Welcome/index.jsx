@@ -5,7 +5,7 @@ import {
 import Tabs from './Tabs';
 
 const Welcome = () => (
-  <Grid verticalAlign="middle" columns={1} centered>
+  <Grid centered padded="horizontally">
     <Grid.Row>
       <Grid.Column>
         <Segment>
