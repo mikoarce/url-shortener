@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Segment, Input, Icon, Header } from 'semantic-ui-react';
-import { timingSafeEqual } from 'crypto';
+import {
+  Segment, Input, Icon, Header,
+} from 'semantic-ui-react';
 
 class AnalyticsPlaceholder extends React.PureComponent {
   static get propTypes() {
@@ -31,7 +32,7 @@ class AnalyticsPlaceholder extends React.PureComponent {
   }
 
   handleChange(_, { name, value }) {
-    this.setState({[name]: value});
+    this.setState({ [name]: value });
   }
 
   render() {

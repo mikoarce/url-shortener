@@ -24,7 +24,7 @@ describe('Analytics Reducer', function() {
   });
 
   describe('when fetching URL information', function() {
-    beforeEach(function () {
+    beforeEach(function() {
       state = Object.assign({}, { url: '', info: [] });
       newState = reducer(state, actions.fetchUrlInfo('http://www.my.url'));
     });

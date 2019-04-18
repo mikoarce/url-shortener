@@ -11,8 +11,10 @@ class UrlAnalytics extends React.PureComponent {
       url: PropTypes.string.isRequired,
       info: PropTypes.arrayOf(PropTypes.object).isRequired,
       fetchUrlInfo: PropTypes.func.isRequired,
+      clearUrl: PropTypes.func.isRequired,
     };
   }
+
   constructor(props) {
     super(props);
 
@@ -28,15 +30,15 @@ class UrlAnalytics extends React.PureComponent {
   render() {
     const { url, info, clearUrl } = this.props;
 
-    return url.length === 0 ? 
-      <AnalyticsPlaceholder onSubmit={this.handleGetUrlAnalytics} />
-        : (
-          <AnalyticsTable
-            headerMessage={`Analytics Table for: ${url}`}
-            info={info}
-            onClearUrl={clearUrl}
-          />
-        );
+    return url.length === 0
+      ? <AnalyticsPlaceholder onSubmit={this.handleGetUrlAnalytics} />
+      : (
+        <AnalyticsTable
+          headerMessage={`Analytics Table for: ${url}`}
+          info={info}
+          onClearUrl={clearUrl}
+        />
+      );
   }
 }
 

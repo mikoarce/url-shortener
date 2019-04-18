@@ -1,5 +1,7 @@
 import React from 'react';
-import { Form, Button, Input, Message } from 'semantic-ui-react';
+import {
+  Form, Button, Input, Message,
+} from 'semantic-ui-react';
 import StringUtil from 'util/string-util';
 
 const Status = Object.freeze({
@@ -16,7 +18,7 @@ class UrlShortener extends React.PureComponent {
       url: '',
       status: Status.NONE,
       message: '',
-    }
+    };
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
@@ -36,7 +38,7 @@ class UrlShortener extends React.PureComponent {
   }
 
   handleChange(_, { name, value }) {
-    this.setState({[name]: value});
+    this.setState({ [name]: value });
   }
 
   render() {

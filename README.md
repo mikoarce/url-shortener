@@ -12,6 +12,7 @@ Tech stack for this project is as follows:
 - [ ] Create browser level tests especially since Puppeteer is a dev dependency anyway.
 - [ ] Add unit test for util class.
 - [ ] Improve UI.
+- [ ] Either have Puppeteer and Chromium working in a Docker image, or prevent them from being installed during build.
 
 ## Deployment
 

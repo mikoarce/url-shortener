@@ -1,6 +1,5 @@
 /* eslint-disable no-console */
 const path = require('path');
-const subprocess = require('child_process');
 const webpack = require('webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');

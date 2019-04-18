@@ -25,7 +25,7 @@ const fetchUrlInfo = (state, url) => {
 };
 
 export const reducer = (state = defaultState, action) => {
-  switch(action.type) {
+  switch (action.type) {
     case types.FETCH_URL_INFO:
       return fetchUrlInfo(state, action.url);
     case types.CLEAR_URL:

@@ -13,6 +13,6 @@ const panes = [
   { menuItem: 'Analytics', render: renderUrlAnalytics },
 ];
 
-const Tabs = () => <Tab panes={panes}/>
+const Tabs = () => <Tab panes={panes} />;
 
 export default Tabs;

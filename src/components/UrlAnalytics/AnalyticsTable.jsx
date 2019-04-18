@@ -1,15 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Table, Button, Header, Label } from 'semantic-ui-react';
+import { Table, Header, Label } from 'semantic-ui-react';
 
 const headerRow = ['IP', 'Operating System', 'Last Access Date'];
 
 const renderBodyRow = ({ ip, os, date }, i) => ({
   key: `row-${i}`,
   cells: [
-    ip || "Unknown IP",
-    os || "Unknown OS",
-    date || "Unknown Date",
+    ip || 'Unknown IP',
+    os || 'Unknown OS',
+    date || 'Unknown Date',
   ],
 });
 
