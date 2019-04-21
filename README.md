@@ -26,7 +26,7 @@ If you're building the project for the first time, follow these steps:
  4. In the terminal, navigate to the project's root folder and enter the following commands in sequence:
     1. `docker-compose build`
     2. `docker-compose up`
- 5. Access the app in [[localhost://]](http://localhost:8080)
+ 5. Access the app in [[http://localhost:8080]](http://localhost:8080)
 
 ### Rebuilding
 
@@ -37,7 +37,7 @@ Rebuilding the project follows a similar pattern as an initial build, with just 
      1. `docker-compose down -v`
      2. `docker-compose build`
      3. `docker-compose up`
-  3. Access the app in [[localhost://]](http://localhost:8080)
+  3. Access the app in [[http://localhost:8080]](http://localhost:8080)
 
 ## Testing
 
